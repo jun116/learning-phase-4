@@ -12,7 +12,7 @@ async function main() {
       name: 'Alice',
       pets: {
         create: {
-          name: 'JIJI',
+          name: 'GIGI',
           imageUrl: 'https://cdn2.thecatapi.com/images/9u1.jpg',
           birthDate: new Date('2022-01-01'),
           gender: 'Male',
