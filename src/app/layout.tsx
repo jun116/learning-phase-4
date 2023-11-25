@@ -2,6 +2,7 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,26 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="flex justify-between items-center p-4">
+          <Link href="/">
+            <p className="text-5xl">PetLog</p>
+          </Link>
+          <div className="flex">
+            <button className="p-2 border-2 rounded border-blue-600 hover:bg-blue-600">
+              Log in
+            </button>
+          </div>
+        </header>
+        {children}
+        <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+          <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © 2023 Your Name
+            </span>
+          </div>
+        </footer>
+      </body>
     </html>
   )
 }
